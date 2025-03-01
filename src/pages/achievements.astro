@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+
+---
+
+<BaseLayout title="Achievements | Satvik Jonnalagadda" description="Satvik Jonnalagadda's achievements">
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Achievements"
+				tagline="Recognition and accomplishments throughout my journey"
+				align="start"
+			/>
+			
+			<section class="achievements-list">
+				<div class="achievement-item">
+					<Icon icon="trophy" color="var(--accent-regular)" size="2rem" />
+					<div class="achievement-content">
+						<p>Awarded best team in Shiash Info Solutions for showing continuous improvements in project development dashboard.</p>
+					</div>
+				</div>
+
+				<div class="achievement-item">
+					<Icon icon="trophy" color="var(--accent-regular)" size="2rem" />
+					<div class="achievement-content">
+						<p>Secured the first place in a school-level chess competition conducted in the year 2016.</p>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.achievements-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.achievement-item {
+		display: flex;
+		gap: 1.5rem;
+		align-items: flex-start;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+		transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	}
+
+	.achievement-item:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-md);
+	}
+
+	.achievement-content {
+		flex: 1;
+	}
+
+	.achievement-content p {
+		color: var(--gray-300);
+		font-size: var(--text-md);
+	}
+
+	@media (min-width: 50em) {
+		.achievement-item {
+			padding: 2rem;
+			border-radius: 1.5rem;
+		}
+	}
+</style>

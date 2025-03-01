@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+
+---
+
+<BaseLayout title="Certifications | Satvik Jonnalagadda" description="Satvik Jonnalagadda's certifications">
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Certifications"
+				tagline="Professional certifications and courses I've completed"
+				align="start"
+			/>
+			
+			<section class="certifications-grid">
+				<div class="certification-card">
+					<h3>Databricks: Generative AI Fundamentals</h3>
+					<div class="certification-details">
+						<ul>
+							<li>Completed a comprehensive training covering key topics such as Large Language Model (LLM) applications, success strategies with generative AI, and risk assessment.</li>
+							<li>Practical modules included hands-on experience with Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs) for tasks like synthetic data generation and content automation.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="certification-card">
+					<h3>Exposys Data Labs: Web Developer</h3>
+					<div class="certification-details">
+						<ul>
+							<li>Developed and maintained dynamic, responsive websites using HTML, CSS, JavaScript, and Bootstrap. Collaborated with a cross-functional team to design user-friendly interfaces and improve website functionality.</li>
+							<li>Assisted in integrating back-end services and APIs to enhance website features and performance. Conducted debugging, testing, and optimization to ensure seamless user experiences.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="certification-card">
+					<h3>Microsoft Technology Associate</h3>
+					<div class="certification-details">
+						<ul>
+							<li>Gained foundational knowledge in Python programming, including data structures, algorithms, and object-oriented programming.</li>
+							<li>Demonstrated proficiency in writing, debugging, and optimizing Python code for various applications.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="certification-card">
+					<h3>NPTEL: Big Data Computing</h3>
+					<div class="certification-details">
+						<ul>
+							<li>Acquired a deep understanding of big data technologies, including Hadoop, MapReduce, and Spark.</li>
+							<li>Learned to design and implement scalable data processing systems for large datasets. Gained practical experience in data storage, retrieval, and analysis using distributed computing frameworks.</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.certifications-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+
+	.certification-card {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+		transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	}
+
+	.certification-card:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-md);
+	}
+
+	.certification-card h3 {
+		margin-bottom: 1rem;
+		font-size: var(--text-xl);
+		color: var(--accent-regular);
+	}
+
+	.certification-details ul {
+		list-style-type: disc;
+		padding-left: 1.5rem;
+		color: var(--gray-300);
+	}
+
+	.certification-details li {
+		margin-bottom: 0.75rem;
+	}
+
+	@media (min-width: 50em) {
+		.certifications-grid {
+			grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		}
+
+		.certification-card {
+			padding: 2.5rem;
+			border-radius: 1.5rem;
+		}
+	}
+</style>

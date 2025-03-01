@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+
+---
+
+<BaseLayout title="Education | Satvik Jonnalagadda" description="Satvik Jonnalagadda's educational background">
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Education"
+				tagline="My academic journey and coursework"
+				align="start"
+			/>
+			
+			<section>
+				<div class="education-item">
+					<div class="education-header">
+						<h3>University at Buffalo, Buffalo, NY, USA</h3>
+						<p class="education-date">Jan 2024 – Jun 2025</p>
+					</div>
+					<p class="education-degree">Master's in Computer Science (AI/ML), CGPA: 3.7 (as of Jan'25)</p>
+					<div class="coursework">
+						<h4>Coursework:</h4>
+						<p>Statistical Data Mining, Machine Learning, Deep Learning, Reinforcement Learning, Computer Vision, 
+						Data Intensive Computing, Operating Systems, Data Models Query Languages, Computer Security</p>
+					</div>
+				</div>
+
+				<div class="education-item">
+					<div class="education-header">
+						<h3>Bapatla Engineering College, Vijayawada, India</h3>
+						<p class="education-date">Aug 2019 – May 2023</p>
+					</div>
+					<p class="education-degree">Bachelor of Technology, Computer Science Engineering, CGPA: 9.0</p>
+					<div class="coursework">
+						<h4>Coursework:</h4>
+						<p>Software Engineering, DBMS, Numerical Analytics, Mobile App Development, Cloud Computing, Full 
+						Stack Development, Wireless Networks, Unix Programming, Data Mining, Cryptography Network Security</p>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.education-item {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+		margin-bottom: 2rem;
+	}
+
+	.education-header {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 0.5rem;
+	}
+
+	.education-date {
+		color: var(--gray-400);
+		font-size: var(--text-sm);
+	}
+
+	.education-degree {
+		font-weight: 600;
+		color: var(--accent-regular);
+		margin-bottom: 1rem;
+	}
+
+	.coursework h4 {
+		margin-bottom: 0.5rem;
+		font-size: var(--text-md);
+	}
+
+	.coursework p {
+		color: var(--gray-300);
+	}
+
+	@media (min-width: 50em) {
+		.education-item {
+			padding: 2.5rem;
+			border-radius: 1.5rem;
+		}
+
+		.education-header {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+</style>

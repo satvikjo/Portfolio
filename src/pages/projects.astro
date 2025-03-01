@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+
+---
+
+<BaseLayout title="Projects | Satvik Jonnalagadda" description="Satvik Jonnalagadda's projects">
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Projects"
+				tagline="See my technical projects that showcase my skills and expertise"
+				align="start"
+			/>
+			
+			<section class="projects-grid">
+				<div class="project-card">
+					<h3>Cardamom Plant Disease Recognition</h3>
+					<p class="project-tags">Deep Learning</p>
+					<div class="project-details">
+						<ul>
+							<li>Developed an intelligent diagnostic system leveraging state-of-the-art deep learning models such as VGG, ResNet, and CNN to accurately classify cardamom plant diseases, with a focus on improving agricultural outcomes.</li>
+							<li>Implemented an advanced image classification pipeline by pre-processing plant leaf images, applying data augmentation techniques, and ensuring model generalization to real-world conditions.</li>
+							<li>Deployed the solution on cloud infrastructure, enabling real-time disease detection and remote monitoring of cardamom crops for farmers and agricultural professionals.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="project-card">
+					<h3>Cricket Match Insights: IPL Edition</h3>
+					<p class="project-tags">PostgreSQL</p>
+					<div class="project-details">
+						<ul>
+							<li>Developed a robust PostgreSQL-based analytics platform to display and analyze IPL match data from the last 16 years, incorporating advanced SQL techniques such as relational algebra, custom functions, and triggers to ensure accurate and efficient data processing.</li>
+							<li>Engineered dynamic queries and visualizations to present detailed insights on match results, player performances, and team statistics, enhancing user experience with real-time updates and interactive reports.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="project-card">
+					<h3>House Price Forecasting</h3>
+					<p class="project-tags">Machine Learning</p>
+					<div class="project-details">
+						<ul>
+							<li>Developed predictive models using linear regression and decision tree regressor to estimate house prices based on factors like number of bedrooms, location, longitude, latitude, and bathrooms, achieving high accuracy in price predictions.</li>
+							<li>Utilized advanced evaluation techniques such as cross-validation and hyperparameter tuning to optimize model accuracy and reliability, providing actionable insights for real estate market analysis.</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.projects-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+
+	.project-card {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+		transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	}
+
+	.project-card:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-md);
+	}
+
+	.project-card h3 {
+		margin-bottom: 0.5rem;
+		font-size: var(--text-xl);
+	}
+
+	.project-tags {
+		color: var(--accent-regular);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
+
+	.project-details ul {
+		list-style-type: disc;
+		padding-left: 1.5rem;
+		color: var(--gray-300);
+	}
+
+	.project-details li {
+		margin-bottom: 0.75rem;
+	}
+
+	@media (min-width: 50em) {
+		.projects-grid {
+			grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		}
+
+		.project-card {
+			padding: 2.5rem;
+			border-radius: 1.5rem;
+		}
+	}
+</style>

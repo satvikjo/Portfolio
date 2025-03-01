@@ -1,0 +1,80 @@
+---
+import Icon from '../components/Icon.astro';
+---
+
+<section id="education" class="section bg-light-200 dark:bg-dark-100">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-dark-100 dark:text-light-100">
+      Education
+    </h2>
+
+    <!-- Education Cards - Styled like Projects -->
+    <div class="grid grid-cols-1 gap-8">
+      
+      <!-- University at Buffalo -->
+      <div class="card bg-white dark:bg-dark-200 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
+        <div class="flex items-center gap-4">
+          <div>
+            <img src="/ub.png" alt="University at Buffalo Logo" class="w-12 h-12 object-contain" />
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-dark-100 dark:text-light-100">University at Buffalo, NY, USA</h4>
+            <p class="text-primary-light dark:text-primary-dark font-medium">Master of Science in Computer Science and Engineering</p>
+            <p class="text-dark-200 dark:text-light-200"> January 2024 – May 2025</p>
+            <p class="text-dark-200 dark:text-light-200">CGPA: 3.7 as of Jan'25</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bapatla Engineering College -->
+      <div class="card bg-white dark:bg-dark-200 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
+        <div class="flex items-center gap-4">
+          <div>
+            <img src="/bec.png" alt="Bapatla Engineering College Logo" class="w-12 h-12 object-contain" />
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-dark-100 dark:text-light-100">Bapatla Engineering College, India</h4>
+            <p class="text-primary-light dark:text-primary-dark font-medium">Bachelor of Technology in Computer Science and Engineering</p>
+            <p class="text-dark-200 dark:text-light-200">August 2019 – May 2023</p>
+            <p class="text-dark-200 dark:text-light-200">CGPA: 9.0</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<style>
+  /* Education Card Initial State */
+#education .card {
+    opacity: 0;
+    transform: translateX(-50px); /* Start from the left */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* When Visible, Fade In from Left to Right */
+#education .card.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+</style>
+
+<script>
+  // Add animation when education cards come into view (like projects)
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('#education .card').forEach(card => {
+        observer.observe(card);
+    });
+});
+
+</script>

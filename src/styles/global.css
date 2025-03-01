@@ -1,0 +1,291 @@
+/* Global variables */
+:root {
+  /* Colors */
+  --gray-0: #090b11;
+  --gray-50: #141925;
+  --gray-100: #283044;
+  --gray-200: #3d4663;
+  --gray-300: #505d84;
+  --gray-400: #6474a2;
+  --gray-500: #8490b5;
+  --gray-600: #a3acc8;
+  --gray-700: #c3cadb;
+  --gray-800: #e3e6ee;
+  --gray-900: #f3f4f7;
+  --gray-999-basis: 0, 0%, 100%;
+  --gray-999_40: hsla(var(--gray-999-basis), 0.4);
+  --gray-999: #ffffff;
+
+  --accent-light: #c561f6;
+  --accent-regular: #7611a6;
+  --accent-dark: #1c0056;
+  --accent-overlay: hsla(280, 89%, 67%, 0.33);
+  --accent-subtle-overlay: var(--accent-overlay);
+  --accent-text-over: var(--gray-999);
+
+  --link-color: var(--accent-regular);
+
+  /* Gradients */
+  --gradient-stop-1: var(--accent-light);
+  --gradient-stop-2: var(--accent-regular);
+  --gradient-stop-3: var(--accent-dark);
+  --gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 150%);
+  --gradient-accent: linear-gradient(
+    150deg,
+    var(--gradient-stop-1),
+    var(--gradient-stop-2),
+    var(--gradient-stop-3)
+  );
+  --gradient-accent-orange: linear-gradient(
+    150deg,
+    #ca7879,
+    var(--accent-regular),
+    var(--accent-dark)
+  );
+  --gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
+
+  /* Shadows */
+  --shadow-sm: 0px 6px 3px rgba(9, 11, 17, 0.01), 0px 4px 2px rgba(9, 11, 17, 0.01),
+    0px 2px 2px rgba(9, 11, 17, 0.02), 0px 0px 1px rgba(9, 11, 17, 0.03);
+  --shadow-md: 0px 28px 11px rgba(9, 11, 17, 0.01), 0px 16px 10px rgba(9, 11, 17, 0.03),
+    0px 7px 7px rgba(9, 11, 17, 0.05), 0px 2px 4px rgba(9, 11, 17, 0.06);
+  --shadow-lg: 0px 62px 25px rgba(9, 11, 17, 0.01), 0px 35px 21px rgba(9, 11, 17, 0.05),
+    0px 16px 16px rgba(9, 11, 17, 0.1), 0px 4px 9px rgba(9, 11, 17, 0.12);
+
+  /* Text Sizes */
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 2.125rem;
+  --text-3xl: 2.625rem;
+  --text-4xl: 3.5rem;
+  --text-5xl: 4.5rem;
+
+  /* Fonts */
+  --font-system: system-ui, -apple-system, BlinkMacSystemFont;
+  --font-body: 'Cambria', var(--font-system);
+  --font-brand: Rubik, var(--font-system);
+
+  /* Transitions */
+  --theme-transition: 0.2s ease-in-out;
+}
+
+.dark {
+  --gray-0: #ffffff;
+  --gray-50: #f3f4f7;
+  --gray-100: #e3e6ee;
+  --gray-200: #c3cadb;
+  --gray-300: #a3acc8;
+  --gray-400: #8490b5;
+  --gray-500: #6474a2;
+  --gray-600: #505d84;
+  --gray-700: #3d4663;
+  --gray-800: #283044;
+  --gray-900: #141925;
+  --gray-999-basis: 225, 31%, 5%;
+  --gray-999: #090b11;
+
+  --accent-light: #1c0056;
+  --accent-regular: #7611a6;
+  --accent-dark: #c561f6;
+  --accent-overlay: hsla(280, 89%, 67%, 0.33);
+  --accent-subtle-overlay: hsla(281, 81%, 36%, 0.33);
+  --accent-text-over: var(--gray-0);
+
+  --link-color: var(--accent-dark);
+
+  --gradient-stop-1: #4c11c6;
+  --gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
+  --gradient-accent-orange: linear-gradient(
+    150deg,
+    #ca7879,
+    var(--accent-regular),
+    var(--accent-light)
+  );
+  --gradient-stroke: linear-gradient(180deg, var(--gray-600), var(--gray-800));
+
+  --shadow-sm: 0px 6px 3px rgba(255, 255, 255, 0.01), 0px 4px 2px rgba(255, 255, 255, 0.01),
+    0px 2px 2px rgba(255, 255, 255, 0.02), 0px 0px 1px rgba(255, 255, 255, 0.03);
+  --shadow-md: 0px 28px 11px rgba(255, 255, 255, 0.01), 0px 16px 10px rgba(255, 255, 255, 0.03),
+    0px 7px 7px rgba(255, 255, 255, 0.05), 0px 2px 4px rgba(255, 255, 255, 0.06);
+  --shadow-lg: 0px 62px 25px rgba(255, 255, 255, 0.01), 0px 35px 21px rgba(255, 255, 255, 0.05),
+    0px 16px 16px rgba(255, 255, 255, 0.1), 0px 4px 9px rgba(255, 255, 255, 0.12);
+}
+
+html,
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color var(--theme-transition);
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.1;
+  font-family: "Cambria", Times, serif;
+  font-weight: 600;
+}
+
+.section {
+  padding: 5rem 0;
+  scroll-margin-top: 5rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.card {
+  background-color: var(--gray-999);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.dark .card {
+  background-color: var(--gray-800);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--gradient-accent);
+  color: var(--accent-text-over);
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow-md);
+  color: var(--accent-text-over);
+}
+
+.btn-outline {
+  border: 1px solid var(--accent-regular);
+  color: var(--accent-regular);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent-overlay);
+  color: var(--accent-dark);
+}
+
+.dark .btn-outline {
+  border-color: var(--accent-dark);
+  color: var(--accent-dark);
+}
+
+.dark .btn-outline:hover {
+  background-color: var(--accent-subtle-overlay);
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+  background-color: var(--accent-overlay);
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive utilities */
+@media (min-width: 640px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 8rem 0;
+  }
+}

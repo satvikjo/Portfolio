@@ -1,0 +1,145 @@
+---
+import Icon from '../components/Icon.astro';
+---
+
+<section id="certifications" class="section bg-light-200 dark:bg-dark-100">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-dark-100 dark:text-light-100">
+      Certifications
+    </h2>
+    
+    <div class="relative overflow-hidden">
+      <!-- Swiper container -->
+      <div class="certifications-slider">
+        <div class="swiper-wrapper">
+          <!-- Microsoft Technology Associate -->
+          <div class="swiper-slide">
+            <div class="card h-full p-6 flex flex-col">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark rounded-full flex items-center justify-center text-white">
+                  <Icon icon="certificate" size="1.5em" />
+                </div>
+                <h3 class="text-xl font-bold text-dark-100 dark:text-light-100">Microsoft Technology Associate</h3>
+              </div>
+              <div class="flex-grow">
+                <ul class="list-disc list-inside text-dark-200 dark:text-light-200 space-y-2">
+                  <li>Gained foundational knowledge in Python programming, including data structures, algorithms, and object-oriented programming.</li>
+                  <li>Demonstrated proficiency in writing, debugging, and optimizing Python code for various applications.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Exposys Data Labs -->
+          <div class="swiper-slide">
+            <div class="card h-full p-6 flex flex-col">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark rounded-full flex items-center justify-center text-white">
+                  <Icon icon="certificate" size="1.5em" />
+                </div>
+                <h3 class="text-xl font-bold text-dark-100 dark:text-light-100">Data Bricks: Generative AI Fundamentals</h3>
+              </div>
+              <div class="flex-grow">
+                <ul class="list-disc list-inside text-dark-200 dark:text-light-200 space-y-2">
+                  <li>Completed a comprehensive training covering key topics such as Large Language Model (LLM) applications,
+                    success strategies with generative AI, and risk assessment.</li>
+                  <li>Practical modules included hands-on experience with Generative Adversarial Networks (GANs) and Variational
+                    Autoencoders (VAEs) for tasks like synthetic data generation and content automation.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- NPTEL: Big Data Computing -->
+          <div class="swiper-slide">
+            <div class="card h-full p-6 flex flex-col">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark rounded-full flex items-center justify-center text-white">
+                  <Icon icon="certificate" size="1.5em" />
+                </div>
+                <h3 class="text-xl font-bold text-dark-100 dark:text-light-100">NPTEL: Big Data Computing</h3>
+              </div>
+              <div class="flex-grow">
+                <ul class="list-disc list-inside text-dark-200 dark:text-light-200 space-y-2">
+                  <li>Acquired a deep understanding of big data technologies, including Hadoop, MapReduce, and Spark.</li>
+                  <li>Learned to design and implement scalable data processing systems for large datasets. Gained practical experience in data storage, retrieval, and analysis using distributed computing frameworks.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation buttons -->
+        <div class="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-light-300 dark:bg-dark-300 rounded-full p-3 shadow-md">
+          <Icon icon="arrow-left" size="1.5em" />
+        </div>
+        <div class="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-light-300 dark:bg-dark-300 rounded-full p-3 shadow-md">
+          <Icon icon="arrow-right" size="1.5em" />
+        </div>
+        
+        <!-- Pagination -->
+        <div class="swiper-pagination mt-6"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const swiper = new Swiper('.certifications-slider', {
+      modules: [Navigation, Pagination],
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+    });
+  });
+</script>
+
+<style>
+  .swiper-slide {
+    height: auto;
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    background-color: var(--accent-overlay);
+  }
+  
+  .swiper-pagination {
+    position: static;
+    margin-top: 2rem;
+  }
+</style>

@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+
+---
+
+<BaseLayout title="Experience | Satvik Jonnalagadda" description="Satvik Jonnalagadda's work experience">
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Work Experience"
+				tagline="My professional journey and contributions"
+				align="start"
+			/>
+			
+			<section>
+				<div class="experience-item">
+					<div class="experience-header">
+						<h3>Shiash Info Solutions Pvt Ltd</h3>
+						<p class="experience-date">Jun 2023 – Oct 2023</p>
+					</div>
+					<p class="experience-title">Full Stack Developer Intern</p>
+					<p class="experience-location">Chennai, India</p>
+					
+					<div class="project">
+						<h4>Project: Sustainable Consolidated System for Partiality Grouping</h4>
+						<ul class="responsibilities">
+							<li>Engineered a high-performance web application designed to automate and optimize data grouping processes, significantly improving system efficiency by 25%.</li>
+							<li>Utilized Django for front-end development, crafting a modern, responsive interface that enhanced user engagement and streamlined workflow management.</li>
+							<li>Managed back-end development using technologies like Node.js and MongoDB, ensuring smooth data handling and system performance.</li>
+							<li>Implemented advanced algorithms to eradicate bias in data classification, driving accuracy and fairness in the system's core functionalities.</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.experience-item {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+		margin-bottom: 2rem;
+	}
+
+	.experience-header {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 0.5rem;
+	}
+
+	.experience-date {
+		color: var(--gray-400);
+		font-size: var(--text-sm);
+	}
+
+	.experience-title {
+		font-weight: 600;
+		color: var(--accent-regular);
+		margin-bottom: 0.25rem;
+	}
+
+	.experience-location {
+		color: var(--gray-400);
+		font-size: var(--text-sm);
+		margin-bottom: 1.5rem;
+	}
+
+	.project h4 {
+		margin-bottom: 1rem;
+		font-size: var(--text-md);
+	}
+
+	.responsibilities {
+		list-style-type: disc;
+		padding-left: 1.5rem;
+		color: var(--gray-300);
+	}
+
+	.responsibilities li {
+		margin-bottom: 0.75rem;
+	}
+
+	@media (min-width: 50em) {
+		.experience-item {
+			padding: 2.5rem;
+			border-radius: 1.5rem;
+		}
+
+		.experience-header {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+</style>

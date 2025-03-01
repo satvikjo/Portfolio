@@ -1,0 +1,121 @@
+---
+import Icon from '../components/Icon.astro';
+---
+
+<section id="interests" class="section">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-dark-100 dark:text-light-100">
+      Interests & Hobbies
+    </h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Technology & Programming -->
+      <div class="card p-6 hover:shadow-lg transition-all duration-300 animate-slide-up">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark rounded-full flex items-center justify-center text-white">
+            <Icon icon="code" size="1.5em" />
+          </div>
+          <h3 class="text-xl font-bold text-dark-100 dark:text-light-100">Technology & Programming</h3>
+        </div>
+        <p class="text-dark-200 dark:text-light-200">
+          Exploring new programming languages, frameworks, and staying updated with the latest tech trends. Participating in hackathons and coding challenges.
+        </p>
+      </div>
+      
+      <!-- Machine Learning -->
+      <div class="card p-6 hover:shadow-lg transition-all duration-300 animate-slide-up" style="animation-delay: 0.2s;">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark rounded-full flex items-center justify-center text-white">
+            <Icon icon="brain-circuit" size="1.5em" />
+          </div>
+          <h3 class="text-xl font-bold text-dark-100 dark:text-light-100">Student Leader</h3>
+        </div>
+        <p class="text-dark-200 dark:text-light-200">
+          Led and supported campus initiatives while providing exceptional service in a dynamic environment.
+        </p>
+      </div>
+      
+      <!-- Open Source -->
+      <div class="card p-6 hover:shadow-lg transition-all duration-300 animate-slide-up" style="animation-delay: 0.4s;">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark rounded-full flex items-center justify-center text-white">
+            <Icon icon="github-logo" size="1.5em" />
+          </div>
+          <h3 class="text-xl font-bold text-dark-100 dark:text-light-100">Open Source</h3>
+        </div>
+        <p class="text-dark-200 dark:text-light-200">
+          Contributing to open-source projects, collaborating with developers worldwide, and building tools that benefit the community.
+        </p>
+      </div>
+      
+      <!-- Reading -->
+      <div class="card p-6 hover:shadow-lg transition-all duration-300 animate-slide-up" style="animation-delay: 0.6s;">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark rounded-full flex items-center justify-center text-white">
+            <Icon icon="file-code" size="1.5em" />
+          </div>
+          <h3 class="text-xl font-bold text-dark-100 dark:text-light-100">Technical Reading</h3>
+        </div>
+        <p class="text-dark-200 dark:text-light-200">
+          Reading technical books, research papers, and articles about computer science, software engineering, and emerging technologies.
+        </p>
+      </div>
+      
+      <!-- Teaching -->
+      <div class="card p-6 hover:shadow-lg transition-all duration-300 animate-slide-up" style="animation-delay: 0.8s;">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark rounded-full flex items-center justify-center text-white">
+            <Icon icon="pencil-line" size="1.5em" />
+          </div>
+          <h3 class="text-xl font-bold text-dark-100 dark:text-light-100">Playing Chess & Watching Movies</h3>
+        </div>
+        <p class="text-dark-200 dark:text-light-200">
+          Enhancing strategic thinking through chess and exploring diverse storytelling through movies.
+        </p>
+      </div>
+      
+      <!-- Problem Solving -->
+      <div class="card p-6 hover:shadow-lg transition-all duration-300 animate-slide-up" style="animation-delay: 1s;">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark rounded-full flex items-center justify-center text-white">
+            <Icon icon="strategy" size="1.5em" />
+          </div>
+          <h3 class="text-xl font-bold text-dark-100 dark:text-light-100">Problem Solving</h3>
+        </div>
+        <p class="text-dark-200 dark:text-light-200">
+          Solving complex algorithmic problems, participating in competitive programming contests, and developing analytical thinking skills.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Add animation when interests come into view
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('#interests .card').forEach(card => {
+      observer.observe(card);
+    });
+  });
+</script>
+
+<style>
+  #interests .card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  #interests .card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
